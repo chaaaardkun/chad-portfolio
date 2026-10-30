@@ -1,0 +1,66 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: $z-header;
+  background: linear-gradient(
+    to bottom,
+    rgba(38, 38, 38, 0.92),
+    rgba(38, 38, 38, 0)
+  );
+  backdrop-filter: blur(2px);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: calc($max-width + 2 * $gutter);
+  min-height: $header-height;
+  margin: 0 auto;
+  padding: 0 $gutter;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logoWrapper {
+  border-radius: $radius;
+  border: 1px solid $color-blue;
+  .logo {
+    display: block;
+    aspect-ratio: 1 /1;
+    position: relative;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mail {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: $radius;
+  background: transparent;
+  color: $color-text;
+  cursor: pointer;
+}
+
+.mail {
+  padding: 0;
+}

@@ -1,0 +1,48 @@
+{
+  "eyebrow": "Clients",
+  "title": "Clients i've worked with",
+  "previousLabel": "Previous projects",
+  "nextLabel": "Next projects",
+  "items": [
+    {
+      "title": "Global Payments",
+      "color": "#ffffff",
+      "logo": "/logos/global-payments.svg"
+    },
+    {
+      "title": "Sky",
+      "color": "#2d2d2d",
+      "logo": "/logos/sky.png"
+    },
+    {
+      "title": "IQVIA",
+      "color": "#ffffff",
+      "logo": "/logos/iqvia.svg"
+    },
+    {
+      "title": "WeAreWiser",
+      "color": "#5f27cd",
+      "logo": "/logos/wearewiser.svg"
+    },
+    {
+      "title": "Oqulo",
+      "color": "#ffffff",
+      "logo": "/logos/oqulo.webp"
+    },
+    {
+      "title": "Etihad",
+      "color": "#263a46",
+      "logo": "/logos/etihad.svg"
+    },
+    {
+      "title": "NBCUniversal",
+      "color": "#ffffff",
+      "logo": "/logos/nbcuniversal.svg"
+    },
+    {
+      "title": "Victoria's Secret",
+      "color": "#f4c2cc",
+      "logo": "/logos/victorias-secret.svg"
+    }
+  ]
+}

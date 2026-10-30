@@ -1,0 +1,76 @@
+{
+  "eyebrow": "Experience",
+  "title": "Where I've Worked",
+  "items": [
+    {
+      "company": "Freelance",
+      "position": "Freelance Frontend Engineer",
+      "period": "Apr 2023 - Present",
+      "highlights": [
+        "Build high-performing, visually dynamic web applications and marketing websites using ReactJS, NextJS, and Vue3.",
+        "Develop and integrate headless CMS platforms like Sanity, DatoCMS, PayloadCMS, Contentful, ensuring scalable and maintainable architectures.",
+        "Implement immersive UI/UX experiences with GSAP animations, TailwindCSS, and Styled Components.",
+        "Optimize performance, responsiveness, and accessibility across all devices and browsers.",
+        "Manage project repositories and version control using Git, ensuring clean, collaborative workflows.",
+        "Builds and maintains reusable component libraries across multiple clients, using CSS variables and design tokens to ensure consistent branding, scalability, and customization.",
+        "Designs and refines AI instructions, specialized agents, and development workflows to improve engineering efficiency, automate repetitive tasks, and maintain code quality."
+      ]
+    },
+    {
+      "company": "Webmint",
+      "position": "Senior Frontend Developer (Part Time)",
+      "period": "Mar 2022 - Oct 2023",
+      "highlights": [
+        "Led frontend development for Web3, NFT, and Minting platforms, transforming complex blockchain concepts into sleek user interfaces.",
+        "Built reusable UI libraries and improved frontend maintainability using ReactJS, NextJS, and Vue3.",
+        "Conducted code reviews, mentored junior developers, and enforced high coding standards.",
+        "Collaborated with backend and design teams to ensure seamless integration and visual consistency.",
+        "Drove UI performance optimizations, improving load speed and user experience."
+      ]
+    },
+    {
+      "company": "Oqulo",
+      "position": "Software Engineer I - Software Engineer III",
+      "period": "Aug 2019 - Jan 2023",
+      "highlights": [
+        "Designed and developed enterprise-grade web applications using ReactJS, NextJS, VueJS, and GraphQL.",
+        "Translated Figma/Adobe XD designs into pixel-perfect, responsive UIs with optimized performance.",
+        "Conducted training sessions and mentorship programs for junior engineers, fostering growth and best practices.",
+        "Collaborated in Agile sprints, participating in daily scrums and cross-functional team planning.",
+        "Delivered solutions under tight deadlines while maintaining high-quality standards.",
+        "Led frontend development and a team of junior and interns, ensuring timely delivery of projects and adherence to best practices."
+      ]
+    },
+    {
+      "company": "Changing Digital",
+      "position": "Frontend Developer (Part Time)",
+      "period": "Aug 2020 - Feb 2022",
+      "highlights": [
+        "Converted design mockups into production-ready screens for mobile (React Native) and web (React / NextJS).",
+        "Enhanced code maintainability by modularizing UI components and streamlining project structure.",
+        "Supported project management and backlog prioritization for faster delivery cycles."
+      ]
+    },
+    {
+      "company": "AWS Philippines",
+      "position": "Junior Programmer",
+      "period": "Oct 2018 - Apr 2019",
+      "highlights": [
+        "Built internal automation tools using C++ (Qt Framework) and Appium for testing workflows.",
+        "Developed desktop automation scripts via AutoIT to enhance productivity.",
+        "Served as acting Team Lead, managing task distribution and ensuring timely project delivery."
+      ]
+    },
+    {
+      "company": "MergePoint System Solutions",
+      "position": "Frontend Developer",
+      "period": "Dec 2017 - Jun 2018",
+      "highlights": [
+        "Led the frontend design and implementation of a Food Delivery App using Laravel and VueJS.",
+        "Created the company's main branding materials and UI prototypes.",
+        "Ensured responsive layouts, accessibility, and UI consistency across the platform.",
+        "Collaborated closely with backend developers to streamline API integration."
+      ]
+    }
+  ]
+}

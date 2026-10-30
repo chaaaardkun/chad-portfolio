@@ -1,0 +1,97 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section {
+  @include section-fill;
+  position: relative;
+  isolation: isolate;
+  padding: 160px 0 160px;
+  // Horizontal clip only: the band's top curve rises into the Experience section.
+  overflow-x: clip;
+}
+
+.section > [aria-hidden="true"]:first-child {
+  top: 5%;
+  svg {
+    transform: scale(1.4);
+  }
+  @include from-md {
+    top: 0;
+    svg {
+      transform: scale(1);
+    }
+  }
+}
+
+.heading {
+  padding: 0 $gutter;
+}
+.viewport {
+  position: relative;
+  // clip (not hidden) so the moving track never adds a scrollbar.
+  overflow: clip;
+
+  // Reduced motion: no marquee, just a scroller with prev/next buttons.
+  @include motion-reduced {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+// Two identical sets side by side. The marquee moves this by -50%, so the
+// slides carry their own spacing (no flex gap) to keep both halves equal.
+.track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.slide {
+  flex: 0 0 auto;
+  // Four cards per set stay at least one viewport wide, so the loop never shows a gap.
+  width: max(240px, 26vw);
+  min-height: 200px;
+  padding-right: 16px;
+  scroll-snap-align: start;
+}
+
+.clone {
+  @include motion-reduced {
+    display: none;
+  }
+}
+
+.controls {
+  display: none;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+
+  @include motion-reduced {
+    display: flex;
+  }
+}
+
+.control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid $color-text;
+  border-radius: 50%;
+  background: transparent;
+  color: $color-text;
+  cursor: pointer;
+  transition: background $transition;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}

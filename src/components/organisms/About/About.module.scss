@@ -1,0 +1,102 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section {
+  @include section-fill;
+  position: relative;
+  isolation: isolate;
+  padding: 160px $gutter 200px;
+}
+
+// Mobile only: enlarge the decorative wave band (the WaveShape wrapper, the section's first child).
+.section > [aria-hidden="true"]:first-child {
+  top: 20%;
+  svg {
+    transform: scale(1.6);
+  }
+  @include from-md {
+    top: 8%;
+    svg {
+      transform: scale(1);
+    }
+  }
+}
+
+.inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: $max-width-sm;
+  margin: 0 auto;
+}
+
+.avatarWrapper {
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+}
+
+.avatar {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.copy {
+  max-width: 640px;
+}
+
+.paragraph {
+  margin: 0 0 16px;
+  font-size: 0.9375rem;
+}
+
+// Mobile: below the content. From md up it sits at the top right with a rule running to the edge.
+.email {
+  align-self: center;
+  margin-top: 32px;
+  color: $color-text;
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.scroll {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+@include from-lg {
+  .email {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+
+    &::after {
+      content: "";
+      width: 23vw;
+      height: 1px;
+      background: $color-text;
+    }
+  }
+
+  .inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .avatarWrapper {
+    flex-shrink: 0;
+  }
+}

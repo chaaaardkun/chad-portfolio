@@ -1,0 +1,98 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.section {
+  position: relative;
+  // Fills the viewport so the pinned block sits centred while it travels.
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 0;
+  background: $color-bg;
+  // Horizontal clip only, so the moving rows never add a page scrollbar.
+  overflow-x: clip;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.row {
+  // clip (not hidden) so the moving track never adds a scrollbar.
+  overflow: clip;
+
+  // Reduced motion: no transforms, just a native scroller per row.
+  @include motion-reduced {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: max-content;
+  margin: 0;
+  padding: 0 $gutter;
+  list-style: none;
+  will-change: transform;
+
+  @include motion-reduced {
+    will-change: auto;
+  }
+}
+
+// First project row (second scroller) runs flush on its right edge.
+.rows > :nth-child(2) > .track {
+  padding-right: 0;
+}
+
+// Last row runs flush on its left edge.
+.rows > :last-child > .track {
+  padding-left: 0;
+}
+
+// Large project card, sized like the reference images.
+.card {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  // Height from the viewport so the title and both rows fit on screen while pinned.
+  height: clamp(220px, 36svh, 420px);
+  aspect-ratio: 16 / 10;
+  padding: 48px;
+  border-radius: $radius;
+  scroll-snap-align: start;
+}
+
+.logo {
+  display: block;
+  max-width: 70%;
+  max-height: 70%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+// Oversized title line at the start of the section.
+.big {
+  flex: 0 0 auto;
+  margin: 0;
+  font-family: $font-heading;
+  font-size: clamp(4rem, 8vw, 8rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: $color-text;
+  scroll-snap-align: start;
+}

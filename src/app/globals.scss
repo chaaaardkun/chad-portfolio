@@ -1,0 +1,69 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Smooth anchor scrolling is handled by GSAP ScrollToPlugin (see
+// hooks/useAnchorScroll.ts). Native smooth scrolling would fight it.
+html {
+  scroll-padding-top: 88px;
+
+  // Session intro: the layout script sets data-intro="pending" before paint.
+  // Only locked when motion is allowed; reduced motion skips the intro.
+  @include motion-ok {
+    &[data-intro="pending"] {
+      overflow: hidden;
+    }
+  }
+}
+
+body {
+  margin: 0;
+  background: $color-bg;
+  color: $color-text;
+  font-family: $font-body;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:focus-visible {
+  outline: 2px solid $color-accent;
+  outline-offset: 3px;
+}
+
+// Programmatic focus targets (anchor scroll) should not show a ring.
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
+@include motion-reduced {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,76 @@
+@use "breakpoints" as bp;
+
+@mixin from-xs {
+  @media (min-width: bp.$bp-xs) {
+    @content;
+  }
+}
+
+@mixin from-sm {
+  @media (min-width: bp.$bp-sm) {
+    @content;
+  }
+}
+
+@mixin from-md {
+  @media (min-width: bp.$bp-md) {
+    @content;
+  }
+}
+
+@mixin from-lg {
+  @media (min-width: bp.$bp-lg) {
+    @content;
+  }
+}
+
+@mixin from-xl {
+  @media (min-width: bp.$bp-xl) {
+    @content;
+  }
+}
+
+@mixin from-xxl {
+  @media (min-width: bp.$bp-xxl) {
+    @content;
+  }
+}
+
+@mixin from-xxxl {
+  @media (min-width: bp.$bp-xxxl) {
+    @content;
+  }
+}
+
+// Motion gates. Every animated style goes inside one of these.
+@mixin motion-ok {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
+
+@mixin motion-reduced {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+// Full viewport section with vertically centred content.
+// Children that use auto side margins need width: 100%.
+@mixin section-fill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100svh;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

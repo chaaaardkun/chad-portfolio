@@ -1,0 +1,406 @@
+@use "tokens" as *;
+@use "sass:color";
+@use "mixins" as *;
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100svh;
+  padding: 120px $gutter 40px;
+}
+
+// Grows to fill the space above the scroll cue and centres the copy in it.
+.content {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  max-width: $max-width;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(3rem, 1.5rem + 7vw, 8rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+// Word and character wrappers for HeroTitle. Characters need inline-block to transform.
+.word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.char {
+  display: inline-block;
+  will-change: transform;
+}
+
+.name {
+  color: $color-accent;
+}
+
+.tagline {
+  max-width: 520px;
+  margin: 24px 0 0;
+  color: $color-text-muted;
+  font-size: 1.0625rem;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  max-width: $max-width;
+  width: 100%;
+  margin: 48px auto 0;
+}
+
+// Hidden until the session intro reveals it (see Loader). Not applied under
+// reduced motion, where the intro is skipped.
+.reveal {
+  @include motion-ok {
+    :global(html[data-intro="pending"]) & {
+      opacity: 0;
+    }
+  }
+}
+
+// Layered phone-over-laptop graphic, to the right of the title. Placeholder content.
+// Desktop: absolutely placed inside .content, clear of the side nav dots.
+// Phone widths: stacks below the tagline.
+.graphic {
+  position: relative;
+  z-index: 2;
+  // Symmetric side margins leave room for the stat cards that poke out of the laptop.
+  margin: 56px 50px 72px;
+
+  // Stacked widths: keep the graphic phone-sized and centred rather than stretching.
+  @include from-sm {
+    width: 100%;
+    max-width: 420px;
+    margin-inline: auto;
+  }
+
+  @include from-lg {
+    max-width: none;
+    position: absolute;
+    top: 50%;
+    right: 58px;
+    width: clamp(200px, calc(47.5vw - 180px), 420px);
+    margin: 0;
+    transform: translateY(-46%);
+  }
+}
+
+.laptop {
+  position: relative;
+  width: 100%;
+}
+
+.laptopLid {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #111;
+  border: 7px solid #1b1b1b;
+  border-bottom-width: 9px;
+  border-radius: 12px 12px 4px 4px;
+  box-shadow:
+    0 0 0 1.5px #4a4a4a inset,
+    0 30px 70px -20px rgba(0, 0, 0, 0.8),
+    0 0 80px -10px rgba($color-accent, 0.33);
+}
+
+.laptopBase {
+  position: relative;
+  height: 13px;
+  margin: 0 -6%;
+  background: linear-gradient(#5a5a5a, #2e2e2e);
+  border-radius: 0 0 18px 18px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 16%;
+    height: 5px;
+    transform: translateX(-50%);
+    background: #222;
+    border-radius: 0 0 8px 8px;
+  }
+}
+
+.phone {
+  position: absolute;
+  bottom: -30%;
+  left: 5%;
+  z-index: 2;
+  width: 30%;
+  aspect-ratio: 9 / 19;
+  background: #111;
+  border: 6px solid #1b1b1b;
+  border-radius: 10px;
+  transform: rotate(-5deg);
+  box-shadow:
+    0 0 0 1.5px #555 inset,
+    0 30px 60px -15px rgba(0, 0, 0, 0.85),
+    0 0 60px -10px rgba($color-violet, 0.4);
+
+  @include from-md {
+    border-radius: 26px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    z-index: 2;
+    width: 28%;
+    height: 8px;
+    transform: translateX(-50%);
+    background: #000;
+    border-radius: 6px;
+  }
+
+  .ui {
+    padding-top: 11%;
+  }
+
+  .uiBanner {
+    height: 30%;
+
+    h4 {
+      font-size: clamp(6px, 0.75vw, 10px);
+      @include from-md {
+        font-size: clamp(7px, 0.75vw, 10px);
+      }
+    }
+  }
+
+  .uiCards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.screen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 4px;
+
+  .phone & {
+    border-radius: 4px;
+
+    @include from-md {
+      border-radius: 20px;
+    }
+  }
+}
+
+.ui {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+  padding: 3.2% 4%;
+  overflow: hidden;
+  background: $color-bg;
+}
+
+.uiBar {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  height: 7%;
+
+  i {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #666;
+  }
+
+  u {
+    width: 30%;
+    height: 5px;
+    margin-left: auto;
+    border-radius: 3px;
+    background: #555;
+  }
+}
+
+.uiBanner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 34%;
+  padding: 6%;
+  border-radius: 6px;
+  background: linear-gradient(
+    135deg,
+    $color-violet,
+    $color-blue 55%,
+    $color-accent
+  );
+
+  h4 {
+    margin: 0;
+    color: $color-text;
+    font: 800 clamp(10px, 1.35vw, 18px) / 1 $font-heading;
+  }
+
+  p {
+    width: 45%;
+    height: 4px;
+    margin: 6px 0 0;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.53);
+  }
+}
+
+.uiCards {
+  display: grid;
+  flex: 1;
+  grid-template-columns: 1fr 1fr;
+  gap: 5%;
+
+  div {
+    border-radius: 5px;
+  }
+}
+
+.cardLight {
+  background: $color-text;
+}
+
+.cardAccent {
+  background: $color-accent;
+}
+
+.cardViolet {
+  background: $color-violet;
+}
+
+.cardBlue {
+  background: $color-blue;
+}
+
+.stat {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35em;
+  margin: 0;
+  padding: 0.7em 1em;
+  border: 1.5px solid rgba($color-text, 0.22);
+  border-radius: 14px;
+  background: linear-gradient(
+    145deg,
+    color.mix($color-navy, $color-bg, 55%),
+    color.mix($color-violet, $color-bg, 30%)
+  );
+  box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.67);
+  font-size: 8px;
+  line-height: 1;
+  white-space: nowrap;
+
+  @include from-md {
+    font-size: clamp(8px, 0.85vw, 12px);
+  }
+
+  strong {
+    color: $color-accent;
+    font: 800 1.5em / 1 $font-heading;
+    font-variant-numeric: tabular-nums;
+
+    @include from-md {
+      font: 800 1.9em / 1 $font-heading;
+    }
+  }
+
+  span {
+    color: $color-text;
+    font: 600 1em / 1 $font-heading;
+  }
+}
+
+.statTopLeft {
+  top: -16%;
+  left: -2%;
+}
+
+.statTopRight {
+  top: 4%;
+  right: -12%;
+}
+
+.statBottomRight {
+  right: 0;
+  bottom: 8%;
+}
+
+.statBottomMid {
+  bottom: -32%;
+  left: 38%;
+}
+
+// Graphic entrance: a short fade with a small rise, laptop then phone then stats.
+// Uses the independent `translate` property so each element's own transform (the
+// phone's rotation) and resting position are untouched. Backwards fill means nothing
+// stays hidden if the animation does not run. Held until the session intro (see
+// Loader) has finished, and skipped entirely under reduced motion.
+@keyframes graphic-in {
+  from {
+    opacity: 0;
+    translate: 0 14px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+.laptop,
+.phone,
+.stat {
+  @include motion-ok {
+    animation: graphic-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: var(--enter-delay, 0.3s);
+
+    :global(html[data-intro="pending"]) & {
+      animation: none;
+    }
+  }
+}
+
+.phone {
+  --enter-delay: 0.55s;
+}
+
+.statTopLeft {
+  --enter-delay: 0.8s;
+}
+
+.statTopRight {
+  --enter-delay: 0.92s;
+}
+
+.statBottomRight {
+  --enter-delay: 1.04s;
+}
+
+.statBottomMid {
+  --enter-delay: 1.16s;
+}

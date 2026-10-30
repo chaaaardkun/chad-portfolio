@@ -1,0 +1,21 @@
+@use "mixins" as *;
+
+.reveal {
+  @include motion-ok {
+    opacity: 0;
+    transform: translateY(1.75rem) rotate(4deg) skewY(3deg);
+    transform-origin: left bottom;
+    // Reset on leave is quick and undelayed; the stagger only applies to the reveal.
+    transition:
+      opacity 0.3s ease-in,
+      transform 0.3s ease-in;
+
+    &[data-shown] {
+      opacity: 1;
+      transform: none;
+      transition:
+        opacity 0.7s ease-out var(--reveal-delay, 0s),
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s);
+    }
+  }
+}

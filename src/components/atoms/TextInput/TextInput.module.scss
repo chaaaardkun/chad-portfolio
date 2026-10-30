@@ -1,0 +1,28 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+  background: $color-field-bg;
+  color: $color-text;
+  font: inherit;
+  font-size: 0.9375rem;
+  transition: border-color $transition, box-shadow $transition;
+}
+
+.input::placeholder {
+  color: $color-text-muted;
+}
+
+.input:hover {
+  border-color: $color-border-strong;
+}
+
+.input:focus {
+  border-color: $color-accent;
+  box-shadow: 0 0 0 3px $color-accent-ring;
+  outline: none;
+}

@@ -1,0 +1,43 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.button {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: $z-floating;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: $radius;
+  background: $color-surface;
+  color: $color-text;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition:
+    opacity $transition,
+    transform $transition,
+    visibility $transition;
+
+  &:hover {
+    background: $color-surface-raised;
+  }
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}

@@ -1,0 +1,30 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+// Wave bands fill their section between two curves. The band sits behind the
+// section's content (the section creates the stacking context with isolation),
+// and the dark page shows through wherever the band does not cover.
+.wave {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+// Compact bands scale down on narrow screens only. Scaling keeps the curve shape.
+.scaled {
+  transform: scaleY(var(--wave-mobile-scale));
+  transform-origin: top;
+  @include from-md {
+    transform: unset;
+    transform-origin: unset;
+  }
+}
+
+// Overflow stays visible so a band can overshoot its section into the next one.
+.svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}

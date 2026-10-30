@@ -1,0 +1,21 @@
+{
+  "eyebrow": "Skills",
+  "title": "Tools I've Been Using",
+  "items": [
+    { "name": "React", "icon": "react", "color": "#61DAFB" },
+    { "name": "NextJS", "icon": "next", "color": "#FFFFFF" },
+    { "name": "Vue3", "icon": "vue", "color": "#42B883" },
+    { "name": "NuxtJS", "icon": "nuxt", "color": "#00DC82" },
+    { "name": "Tailwind CSS", "icon": "tailwind", "color": "#06B6D4" },
+    { "name": "Git", "icon": "git", "color": "#F05032" },
+    { "name": "HTML", "icon": "html", "color": "#E34F26" },
+    { "name": "Sass", "icon": "sass", "color": "#CC6699" },
+    { "name": "TypeScript", "icon": "typescript", "color": "#3178C6" },
+    { "name": "DatoCMS", "icon": "datocms", "color": "#FF7751" },
+    { "name": "Payload CMS", "icon": "payload", "color": "#FFFFFF" },
+    { "name": "Contentful", "icon": "contentful", "color": "#2478CC" },
+    { "name": "Cursor", "icon": "cursor", "color": "#FFFFFF" },
+    { "name": "GitHub Copilot", "icon": "copilot", "color": "#FFFFFF" },
+    { "name": "Claude", "icon": "claude", "color": "#D97757" }
+  ]
+}

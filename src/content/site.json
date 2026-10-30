@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "title": "{name} | Web Developer",
+    "description": "Portfolio of Richard Bandol, web developer and indie game developer."
+  },
+  "profile": {
+    "name": "Chad Bandol",
+    "greeting": "Hello, I'm",
+    "tagline": "A Frontend Engineer passionate about building elegant, high-performing, and user-focused web applications using ReactJS, NextJS, Vue.js, TailwindCSS and Headless CMS.",
+    "email": "richard.bandol0218@gmail.com",
+    "avatar": "/avatar.png",
+    "avatarAlt": "Portrait of {name}"
+  },
+  "socialLinks": [
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/richard-bandol-887a73163/",
+      "icon": "linkedin"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/chaaaardkun",
+      "icon": "github"
+    }
+  ],
+  "navigation": {
+    "ariaLabel": "Sections",
+    "items": [
+      { "label": "Projects", "href": "#projects" },
+      { "label": "About", "href": "#about" },
+      { "label": "Skills", "href": "#skills" },
+      { "label": "Experience", "href": "#experience" },
+      { "label": "Clients", "href": "#clients" },
+      { "label": "Contact", "href": "#contact" }
+    ]
+  },
+  "header": {
+    "emailAriaLabel": "Send an email",
+    "openMenuLabel": "Open menu",
+    "closeMenuLabel": "Close menu"
+  },
+  "topButton": {
+    "ariaLabel": "Scroll to top",
+    "label": "Top"
+  },
+  "footer": {
+    "copyright": "© {name} {year}"
+  }
+}

@@ -1,0 +1,61 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+// Hidden unless the layout script flagged a first visit this session and
+// motion is allowed.
+.loader {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: $z-loader;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: $color-bg;
+
+  @include motion-ok {
+    :global(html[data-intro="pending"]) &,
+    &[data-exiting] {
+      display: flex;
+    }
+  }
+}
+
+// The exit liquid. Sits above the panel and never takes pointer events. Shown
+// only while the exit timeline runs (data-exiting is set and cleared by Loader).
+.wave {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: $z-loader + 1;
+  isolation: isolate;
+  pointer-events: none;
+
+  @include motion-ok {
+    &[data-exiting] {
+      display: block;
+    }
+  }
+}
+
+.mark {
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.bar {
+  width: min(240px, 60vw);
+  height: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: $gradient-brand;
+  transform-origin: left center;
+}

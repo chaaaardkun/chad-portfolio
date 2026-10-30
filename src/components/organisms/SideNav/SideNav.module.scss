@@ -1,0 +1,119 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+// Desktop only: the header menu covers small screens.
+.nav {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: $z-floating;
+  display: block;
+  transform: translateY(-50%);
+  padding: 16px 14px;
+
+  @include from-lg {
+    right: 24px;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  color: $color-text-muted;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color $transition;
+
+  &:hover,
+  &:focus-visible {
+    color: $color-text;
+  }
+}
+
+.label {
+  opacity: 0;
+  transition: opacity $transition;
+  display: none;
+
+  @include from-lg {
+    display: block;
+  }
+
+  .link:hover &,
+  .link:focus-visible &,
+  .active & {
+    opacity: 1;
+  }
+}
+
+.dot {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: $color-text;
+  transition: background $transition;
+
+  // Gradient ring, revealed and pulsed on hover or focus.
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    padding: 2px;
+    border-radius: 50%;
+    background: $gradient-brand;
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity $transition;
+
+    .link:hover &,
+    .link:focus-visible & {
+      opacity: 1;
+    }
+
+    @include motion-ok {
+      .link:hover &,
+      .link:focus-visible & {
+        animation: ring-pulse 1.4s ease-out infinite;
+      }
+    }
+  }
+}
+
+@keyframes ring-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+.active {
+  color: $color-text;
+
+  @include motion-reduced {
+    .dot {
+      transform: scale(1.5);
+    }
+  }
+}

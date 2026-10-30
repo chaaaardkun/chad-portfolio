@@ -1,0 +1,22 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.list {
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  display: inline-flex;
+  padding: 4px;
+  border-radius: 4px;
+  color: $color-text;
+  transition: opacity $transition;
+}
+
+.link:hover {
+  opacity: 0.85;
+}

@@ -1,0 +1,11 @@
+{
+  "scrollLabel": "Scroll",
+  "scrollHref": "#projects",
+  "graphicScreenTitle": "High performing websites for a reasonable price",
+  "stats": [
+    { "value": 10, "suffix": "", "label": "Years Experience" },
+    { "value": 50, "suffix": "+", "label": "Projects Shipped" },
+    { "value": 10, "suffix": "+", "label": "Clients Served" },
+    { "value": 100, "suffix": "+", "label": "Performance Improved" }
+  ]
+}

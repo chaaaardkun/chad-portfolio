@@ -1,0 +1,21 @@
+{
+  "eyebrow": "Contact",
+  "title": "What can I help with?",
+  "intentLegend": "Reason for getting in touch",
+  "intents": [
+    { "value": "project", "label": "Project" },
+    { "value": "opportunity", "label": "Opportunity" },
+    { "value": "hello", "label": "Say hello" }
+  ],
+  "fields": {
+    "name": { "label": "Name", "placeholder": "John Doe" },
+    "email": { "label": "Email", "placeholder": "you@example.com" },
+    "message": { "label": "Message", "placeholder": "A few lines is plenty" }
+  },
+  "submitLabel": "Send message →",
+  "hint": "Opens your email app.",
+  "mailto": {
+    "subject": "Portfolio enquiry ({intent}) from {name}",
+    "body": "{message}\n\n— {name} ({email})"
+  }
+}

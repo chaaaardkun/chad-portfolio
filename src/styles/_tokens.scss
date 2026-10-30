@@ -1,0 +1,38 @@
+// Design tokens. Shared by every SCSS module and by globals.scss.
+
+$color-bg: #262626;
+$color-surface: #333333;
+$color-surface-raised: #3d3d3d;
+$color-text: #ffffff;
+$color-text-muted: #b5b5b5;
+$color-accent: #14d2e6;
+$color-accent-strong: #0bb8cc;
+$color-violet: #8b5cf6;
+$color-blue: #4f7cf0;
+$color-navy: #26408b;
+$color-border: rgba(255, 255, 255, 0.15);
+$color-border-strong: rgba(255, 255, 255, 0.35);
+$color-field-bg: rgba(255, 255, 255, 0.04);
+$color-accent-ring: rgba(20, 210, 230, 0.2);
+
+$gradient-brand: linear-gradient(
+  90deg,
+  $color-violet,
+  $color-blue,
+  $color-accent
+);
+
+$gutter: 16px;
+$max-width: 1440px;
+$max-width-sm: 1120px;
+$radius: 8px;
+$transition: 200ms ease;
+$header-height: 72px;
+
+// Set on <html> by next/font in layout.tsx.
+$font-heading: var(--font-figtree), system-ui, sans-serif;
+$font-body: var(--font-be-vietnam-pro), system-ui, sans-serif;
+
+$z-header: 10;
+$z-floating: 9;
+$z-loader: 100;

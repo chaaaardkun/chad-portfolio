@@ -1,0 +1,24 @@
+@use "tokens" as *;
+@use "mixins" as *;
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  color: $color-text-muted;
+  transition: color $transition;
+}
+
+.item:hover {
+  color: var(--skill-color, #{$color-text});
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.name {
+  font-size: 1.2rem;
+}
