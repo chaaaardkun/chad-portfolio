@@ -22,8 +22,8 @@ export function PortfolioTemplate() {
       <SmoothScroller>
         <main>
           <Hero />
-          <HorizontalScroller />
           <About />
+          <HorizontalScroller />
           <Skills />
           <Experience />
           <Projects />

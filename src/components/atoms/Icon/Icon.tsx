@@ -10,6 +10,8 @@ export type IconName =
   | "chevron-right"
   | "menu"
   | "close"
+  | "desktop"
+  | "mobile"
   | "react"
   | "next"
   | "vue"
@@ -66,6 +68,12 @@ const paths: Record<IconName, ReactElement> = {
   menu: <path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z" />,
   close: (
     <path d="m6.4 5 12.6 12.6-1.4 1.4L5 6.4 6.4 5Zm12.6 1.4L6.4 19l-1.4-1.4L17.6 5 19 6.4Z" />
+  ),
+  desktop: (
+    <path fillRule="evenodd" d="M3 4h18a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-7v2h3v2H7v-2h3v-2H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm1 2v9h16V6H4Z" />
+  ),
+  mobile: (
+    <path fillRule="evenodd" d="M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 2v14h8V4H8Zm4 15.2a.9.9 0 1 0 0 1.8.9.9 0 0 0 0-1.8Z" />
   ),
   react: (
     <g fill="none" stroke="currentColor" strokeWidth="1.5">

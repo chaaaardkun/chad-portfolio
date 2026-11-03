@@ -1,19 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
-import { content } from "@/lib/content";
+import { useRef, useState } from "react";
+import { ProjectModal } from "@/components/organisms/ProjectModal/ProjectModal";
+import { content, fill } from "@/lib/content";
 import { MOTION_QUERY, ScrollTrigger, gsap, useGSAP } from "@/lib/gsap";
 import styles from "./HorizontalScroller.module.scss";
 
-type Project = (typeof content.projects.items)[number];
+type Project = (typeof content.work.items)[number];
 
 // Long enough rows that each one travels past the viewport on its own.
-const ROW_SIZE = 4;
-const projects = content.projects.items;
+const ROW_SIZE = 5;
+const projects = content.work.items;
 
 export function HorizontalScroller() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [selected, setSelected] = useState<Project | null>(null);
 
   // The rows start moving as soon as the section rises from the bottom of the
   // screen, so nothing sits blank. The section pins once it reaches the top and
@@ -93,39 +95,60 @@ export function HorizontalScroller() {
   }
 
   return (
-    <section id="projects" ref={sectionRef} className={styles.section}>
-      <div className={styles.rows}>
-        {/* Title first, then the project rows. */}
-        <div data-row className={styles.row}>
-          <div data-track className={styles.track}>
-            <h2 className={styles.big}>{content.highlights.title}</h2>
+    <>
+      <section id="projects" ref={sectionRef} className={styles.section}>
+        <div className={styles.rows}>
+          {/* Title first, then the project rows. */}
+          <div data-row className={styles.row}>
+            <div data-track className={styles.track}>
+              <h2 className={styles.big}>{content.highlights.title}</h2>
+            </div>
           </div>
-        </div>
 
-        {rows.map((items, rowIndex) => (
-          <div key={rowIndex} data-row className={styles.row}>
-            <ul data-track className={styles.track}>
-              {items.map((project) => (
-                <li
-                  key={project.title}
-                  className={styles.card}
-                  style={{ background: project.color }}
-                >
-                  <Image
-                    className={styles.logo}
-                    src={project.logo}
-                    alt={project.title}
-                    width={320}
-                    height={180}
-                    draggable={false}
-                    unoptimized
-                  />
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-    </section>
+          {rows.map((items, rowIndex) => (
+            <div key={rowIndex} data-row className={styles.row}>
+              <ul data-track className={styles.track}>
+                {items.map((project) => (
+                  <li
+                    key={project.title}
+                    className={styles.card}
+                    style={{ background: project.color }}
+                  >
+                    <button
+                      type="button"
+                      className={styles.cardButton}
+                      aria-label={fill(content.work.modal.openLabel, {
+                        title: project.title,
+                      })}
+                      aria-haspopup="dialog"
+                      onClick={() => setSelected(project)}
+                    >
+                      <Image
+                        className={styles.image}
+                        src={project.image}
+                        alt=""
+                        width={1440}
+                        height={900}
+                        draggable={false}
+                        unoptimized
+                      />
+                      <span className={styles.overlay} aria-hidden="true">
+                        <span className={styles.overlayTitle}>
+                          {project.title}
+                        </span>
+                        <span className={styles.overlayHint}>
+                          {content.work.modal.hintLabel}
+                        </span>
+                      </span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+      <ProjectModal project={selected} onClose={() => setSelected(null)} />
+    </>
   );
 }

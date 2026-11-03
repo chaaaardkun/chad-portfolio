@@ -1,0 +1,186 @@
+{
+  "items": [
+    {
+      "title": "Global Payments",
+      "description": "The careers site for Global Payments, a payments technology company, where candidates can explore roles and find out about working there.",
+      "url": "https://jobs.globalpayments.com/",
+      "color": "#ffffff",
+      "image": "/projects/global-payments.jpg",
+      "desktop": [
+        "/projects/global-payments/desktop-1.jpg",
+        "/projects/global-payments/desktop-2.jpg",
+        "/projects/global-payments/desktop-3.jpg",
+        "/projects/global-payments/desktop-4.jpg"
+      ],
+      "mobile": [
+        "/projects/global-payments/mobile-1.jpg",
+        "/projects/global-payments/mobile-2.jpg",
+        "/projects/global-payments/mobile-3.jpg",
+        "/projects/global-payments/mobile-4.jpg"
+      ]
+    },
+    {
+      "title": "Sky",
+      "description": "The careers site for Sky, the media and entertainment company, showcasing life at Sky and its open roles.",
+      "url": "https://careers.sky.com/",
+      "color": "#2d2d2d",
+      "image": "/projects/sky.jpg",
+      "desktop": [
+        "/projects/sky/desktop-1.jpg",
+        "/projects/sky/desktop-2.jpg",
+        "/projects/sky/desktop-3.jpg",
+        "/projects/sky/desktop-4.jpg"
+      ],
+      "mobile": [
+        "/projects/sky/mobile-1.jpg",
+        "/projects/sky/mobile-2.jpg",
+        "/projects/sky/mobile-3.jpg",
+        "/projects/sky/mobile-4.jpg"
+      ]
+    },
+    {
+      "title": "IQVIA",
+      "description": "The jobs site for IQVIA, a healthcare and life sciences company, where candidates can browse and search open roles.",
+      "url": "https://jobs.iqvia.com/en",
+      "color": "#ffffff",
+      "image": "/projects/iqvia.jpg",
+      "desktop": [
+        "/projects/iqvia/desktop-1.jpg",
+        "/projects/iqvia/desktop-2.jpg",
+        "/projects/iqvia/desktop-3.jpg",
+        "/projects/iqvia/desktop-4.jpg"
+      ],
+      "mobile": [
+        "/projects/iqvia/mobile-1.jpg",
+        "/projects/iqvia/mobile-2.jpg",
+        "/projects/iqvia/mobile-3.jpg",
+        "/projects/iqvia/mobile-4.jpg"
+      ]
+    },
+    {
+      "title": "NEXT",
+      "description": "The careers site for NEXT, the UK fashion and homeware retailer, showing the roles and teams across the business.",
+      "url": "https://careers.next.co.uk/",
+      "color": "#ffffff",
+      "image": "/projects/next.jpg",
+      "desktop": [
+        "/projects/next/desktop-1.jpg",
+        "/projects/next/desktop-2.jpg",
+        "/projects/next/desktop-3.jpg",
+        "/projects/next/desktop-4.jpg"
+      ],
+      "mobile": [
+        "/projects/next/mobile-1.jpg",
+        "/projects/next/mobile-2.jpg",
+        "/projects/next/mobile-3.jpg",
+        "/projects/next/mobile-4.jpg"
+      ]
+    },
+    {
+      "title": "On",
+      "description": "The culture and careers site for On, the sportswear brand, giving an insight into life at the company and its opportunities.",
+      "url": "https://culture.on.com/",
+      "color": "#2d2d2d",
+      "image": "/projects/on.jpg",
+      "desktop": [
+        "/projects/on/desktop-1.jpg",
+        "/projects/on/desktop-2.jpg",
+        "/projects/on/desktop-3.jpg",
+        "/projects/on/desktop-4.jpg"
+      ],
+      "mobile": [
+        "/projects/on/mobile-1.jpg",
+        "/projects/on/mobile-2.jpg",
+        "/projects/on/mobile-3.jpg",
+        "/projects/on/mobile-4.jpg"
+      ]
+    },
+    {
+      "title": "Global",
+      "description": "The careers site for Global, the media and entertainment group, highlighting its brands and open roles.",
+      "url": "https://careers.global.com/",
+      "color": "#ffffff",
+      "image": "/projects/global.jpg",
+      "desktop": [
+        "/projects/global/desktop-1.jpg",
+        "/projects/global/desktop-2.jpg",
+        "/projects/global/desktop-3.jpg",
+        "/projects/global/desktop-4.jpg"
+      ],
+      "mobile": [
+        "/projects/global/mobile-1.jpg",
+        "/projects/global/mobile-2.jpg",
+        "/projects/global/mobile-3.jpg",
+        "/projects/global/mobile-4.jpg"
+      ]
+    },
+    {
+      "title": "Etihad",
+      "description": "The careers site for Etihad, the airline of the United Arab Emirates, with pages for cabin crew, pilots and corporate roles.",
+      "url": "https://careers.etihad.com/",
+      "color": "#ffffff",
+      "image": "/projects/etihad.jpg",
+      "desktop": [
+        "/projects/etihad/desktop-1.jpg",
+        "/projects/etihad/desktop-2.jpg",
+        "/projects/etihad/desktop-3.jpg",
+        "/projects/etihad/desktop-4.jpg"
+      ],
+      "mobile": [
+        "/projects/etihad/mobile-1.jpg",
+        "/projects/etihad/mobile-2.jpg",
+        "/projects/etihad/mobile-3.jpg",
+        "/projects/etihad/mobile-4.jpg"
+      ]
+    },
+    {
+      "title": "Changing Digital",
+      "description": "The website of Changing Digital, a London digital platform and innovation agency that builds SaaS, marketing and publishing platforms for organisations.",
+      "url": "https://changingdigital.com/",
+      "color": "#2d2d2d",
+      "image": "/projects/changing-digital.jpg",
+      "desktop": [
+        "/projects/changing-digital/desktop-1.jpg",
+        "/projects/changing-digital/desktop-2.jpg",
+        "/projects/changing-digital/desktop-3.jpg",
+        "/projects/changing-digital/desktop-4.jpg"
+      ],
+      "mobile": [
+        "/projects/changing-digital/mobile-1.jpg",
+        "/projects/changing-digital/mobile-2.jpg",
+        "/projects/changing-digital/mobile-3.jpg",
+        "/projects/changing-digital/mobile-4.jpg"
+      ]
+    },
+    {
+      "title": "Wiser",
+      "description": "The website of Wiser, an employer brand agency that creates recruitment marketing, careers films and careers websites for organisations.",
+      "url": "https://wearewiser.com/",
+      "color": "#2d2d2d",
+      "image": "/projects/wiser.jpg",
+      "desktop": [
+        "/projects/wiser/desktop-1.jpg",
+        "/projects/wiser/desktop-2.jpg",
+        "/projects/wiser/desktop-3.jpg",
+        "/projects/wiser/desktop-4.jpg"
+      ],
+      "mobile": [
+        "/projects/wiser/mobile-1.jpg",
+        "/projects/wiser/mobile-2.jpg",
+        "/projects/wiser/mobile-3.jpg",
+        "/projects/wiser/mobile-4.jpg"
+      ]
+    }
+  ],
+  "modal": {
+    "openLabel": "View {title}",
+    "closeLabel": "Close",
+    "viewLabel": "Device view",
+    "desktopLabel": "Desktop",
+    "mobileLabel": "Mobile",
+    "hintLabel": "View project",
+    "slideLabel": "Show screenshot {n} of {total}",
+    "visitLabel": "Visit site",
+    "newTabLabel": "opens in a new tab"
+  }
+}

@@ -7,11 +7,15 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
+  li {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .link {
   display: inline-flex;
-  padding: 4px;
   border-radius: 4px;
   color: $color-text;
   transition: opacity $transition;

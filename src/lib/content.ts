@@ -6,6 +6,7 @@ import highlightsJson from "@/content/highlights.json";
 import projectsJson from "@/content/projects.json";
 import siteJson from "@/content/site.json";
 import skillsJson from "@/content/skills.json";
+import workJson from "@/content/work.json";
 import type { IconName } from "@/components/atoms/Icon/Icon";
 
 /** Replaces `{key}` placeholders in a content string. Unknown keys are left as written. */
@@ -68,6 +69,42 @@ type ProjectsContent = {
   items: Project[];
 };
 
+/** A project card in the pinned scroller: a site screenshot. */
+export type WorkItem = {
+  title: string;
+  /** Short factual description of the site, shown in the project modal. */
+  description: string;
+  /** Live site URL, opened from the project modal. */
+  url: string;
+  /** Card background shown behind the screenshot. */
+  color: string;
+  /** Card image: the home page, under public/. */
+  image: string;
+  /** Desktop gallery shots for the laptop frame, under public/. */
+  desktop: string[];
+  /** Phone-sized gallery shots for the phone frame, under public/. */
+  mobile: string[];
+};
+type WorkContent = {
+  items: WorkItem[];
+  modal: {
+    /** Card button label. `{title}` is the project name. */
+    openLabel: string;
+    /** Small hint under the title in the card overlay. */
+    hintLabel: string;
+    /** Slideshow dot label. `{n}` and `{total}` are filled in. */
+    slideLabel: string;
+    closeLabel: string;
+    viewLabel: string;
+    desktopLabel: string;
+    mobileLabel: string;
+    /** Live site link text. */
+    visitLabel: string;
+    /** Spoken hint appended to the link name. */
+    newTabLabel: string;
+  };
+};
+
 type HighlightsContent = { title: string };
 
 type ContactField = { label: string; placeholder: string };
@@ -90,9 +127,10 @@ const skills: SkillsContent = skillsJson as SkillsContent;
 const experience: ExperienceContent = experienceJson;
 const projects: ProjectsContent = projectsJson;
 const contact: ContactContent = contactJson;
+const work: WorkContent = workJson;
 const highlights: HighlightsContent = highlightsJson;
 
-export const content = { site, hero, about, skills, experience, projects, highlights, contact };
+export const content = { site, hero, about, skills, experience, projects, work, highlights, contact };
 
 export const profile = site.profile;
 // Evaluated once at module load (as before), not per render, so prerendering needs no request-time Date.
