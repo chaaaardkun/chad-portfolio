@@ -1,7 +1,30 @@
 {
   "metadata": {
-    "title": "{name} | Web Developer",
-    "description": "Portfolio of Richard Bandol, web developer and indie game developer."
+    "title": "{name} | Frontend Engineer",
+    "description": "Portfolio of Richard (Chad) Bandol, a Philippines-based frontend engineer building fast, accessible web apps with React, Next.js, Vue and headless CMS platforms.",
+    "alternateName": "Richard Bandol",
+    "jobTitle": "Frontend Engineer",
+    "locale": "en_US",
+    "country": "PH",
+    "themeColor": "#262626",
+    "ogImageAlt": "{name}, Frontend Engineer. React, Next.js, Vue and headless CMS.",
+    "keywords": [
+      "frontend engineer",
+      "frontend developer",
+      "web developer",
+      "React developer",
+      "Next.js developer",
+      "Vue.js developer",
+      "Nuxt",
+      "TailwindCSS",
+      "GSAP animation",
+      "headless CMS",
+      "Sanity",
+      "Contentful",
+      "freelance web developer",
+      "Philippines",
+      "portfolio"
+    ]
   },
   "profile": {
     "name": "Chad Bandol",
@@ -26,12 +49,30 @@
   "navigation": {
     "ariaLabel": "Sections",
     "items": [
-      { "label": "About", "href": "#about" },
-      { "label": "Projects", "href": "#projects" },
-      { "label": "Skills", "href": "#skills" },
-      { "label": "Experience", "href": "#experience" },
-      { "label": "Clients", "href": "#clients" },
-      { "label": "Contact", "href": "#contact" }
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "Projects",
+        "href": "#projects"
+      },
+      {
+        "label": "Skills",
+        "href": "#skills"
+      },
+      {
+        "label": "Experience",
+        "href": "#experience"
+      },
+      {
+        "label": "Clients",
+        "href": "#clients"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
     ]
   },
   "header": {

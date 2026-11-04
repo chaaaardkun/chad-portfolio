@@ -27,7 +27,17 @@ export type NavItem = { label: string; href: string };
 export type SocialLink = { label: string; href: string; icon: IconName };
 
 type SiteContent = {
-  metadata: { title: string; description: string };
+  metadata: {
+    title: string;
+    description: string;
+    alternateName: string;
+    jobTitle: string;
+    locale: string;
+    country: string;
+    themeColor: string;
+    ogImageAlt: string;
+    keywords: string[];
+  };
   profile: Profile;
   socialLinks: SocialLink[];
   navigation: { ariaLabel: string; items: NavItem[] };
