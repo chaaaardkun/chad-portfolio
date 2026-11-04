@@ -65,6 +65,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${figtree.variable} ${beVietnamPro.variable}`} suppressHydrationWarning>
       <body>
+        <a href="#main" className="skip-link">
+          {content.site.skipLinkLabel}
+        </a>
         <script dangerouslySetInnerHTML={{ __html: introScript }} />
         <script
           type="application/ld+json"

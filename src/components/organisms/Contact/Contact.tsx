@@ -31,7 +31,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className={styles.section}>
+    <section id="contact" className={styles.section} aria-label={content.contact.title}>
       <SectionHeading eyebrow={content.contact.eyebrow} title={content.contact.title} />
 
       <form className={styles.form} onSubmit={handleSubmit}>
@@ -94,10 +94,10 @@ export function Contact() {
         </FormField>
 
         <div className={styles.actions}>
-          <Button type="submit" className={styles.submit}>
+          <Button type="submit" className={styles.submit} aria-describedby="contact-hint">
             {content.contact.submitLabel}
           </Button>
-          <Reveal as="span" className={styles.hint}>
+          <Reveal as="span" id="contact-hint" className={styles.hint}>
             {content.contact.hint}
           </Reveal>
         </div>

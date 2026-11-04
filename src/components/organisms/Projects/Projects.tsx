@@ -82,7 +82,7 @@ export function Projects() {
   };
 
   return (
-    <section id="clients" ref={sectionRef} className={styles.section}>
+    <section id="clients" ref={sectionRef} className={styles.section} aria-label={content.projects.title}>
       <WaveShape spec={waves.projects} />
 
       <div className={styles.heading}>

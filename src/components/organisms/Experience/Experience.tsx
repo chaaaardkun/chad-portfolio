@@ -15,7 +15,7 @@ export function Experience() {
   const job = jobs[activeIndex];
 
   return (
-    <section id="experience" className={styles.section}>
+    <section id="experience" className={styles.section} aria-label={content.experience.title}>
       <SectionHeading eyebrow={content.experience.eyebrow} title={content.experience.title} />
       <div className={styles.list}>
         <div className={styles.timeline} role="group" aria-label={content.experience.title}>
@@ -30,8 +30,10 @@ export function Experience() {
             </div>
           ))}
         </div>
-        <div key={job.company} className={styles.panel}>
-          <ExperienceItem {...job} />
+        <div aria-live="polite">
+          <div key={job.company} className={styles.panel}>
+            <ExperienceItem {...job} />
+          </div>
         </div>
       </div>
       {/* Last child so the `:first-child` width rule in the module doesn't capture it. */}

@@ -96,7 +96,7 @@ export function HorizontalScroller() {
 
   return (
     <>
-      <section id="projects" ref={sectionRef} className={styles.section}>
+      <section id="projects" ref={sectionRef} className={styles.section} aria-label={content.highlights.title}>
         <div className={styles.rows}>
           {/* Title first, then the project rows. */}
           <div data-row className={styles.row}>

@@ -8,7 +8,7 @@ import styles from "./About.module.scss";
 
 export function About() {
   return (
-    <section id="about" className={styles.section}>
+    <section id="about" className={styles.section} aria-label={content.about.title}>
       <WaveShape spec={waves.about} />
 
       <div className={styles.inner}>

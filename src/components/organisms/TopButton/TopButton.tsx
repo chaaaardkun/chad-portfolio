@@ -37,8 +37,7 @@ export function TopButton() {
       type="button"
       className={`${styles.button} ${visible ? styles.visible : ""}`}
       aria-label={content.site.topButton.ariaLabel}
-      tabIndex={visible ? 0 : -1}
-      aria-hidden={!visible}
+      inert={!visible}
       onClick={scrollToTop}
     >
       <Icon name="arrow-up-gradient" size={20} />

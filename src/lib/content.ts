@@ -41,6 +41,8 @@ type SiteContent = {
   profile: Profile;
   socialLinks: SocialLink[];
   navigation: { ariaLabel: string; items: NavItem[] };
+  skipLinkLabel: string;
+  newTabLabel: string;
   header: { emailAriaLabel: string; openMenuLabel: string; closeMenuLabel: string };
   topButton: { ariaLabel: string; label: string };
   footer: { copyright: string };

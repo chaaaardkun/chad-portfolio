@@ -30,20 +30,28 @@ export function Slideshow({
   interval = 3500,
 }: SlideshowProps) {
   const [index, setIndex] = useState(0);
+  // Autoplay pauses while the pointer or focus is inside, so slides never move under the user (WCAG 2.2.2).
+  const [paused, setPaused] = useState(false);
 
   // Depends on `index` so picking a dot restarts the timer from zero.
   useEffect(() => {
-    if (!playing || images.length < 2) return;
+    if (!playing || paused || images.length < 2) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = window.setTimeout(
       () => setIndex((current) => (current + 1) % images.length),
       interval,
     );
     return () => window.clearTimeout(timer);
-  }, [playing, index, images.length, interval]);
+  }, [playing, paused, index, images.length, interval]);
 
   return (
-    <div className={styles.slideshow}>
+    <div
+      className={styles.slideshow}
+      onPointerEnter={() => setPaused(true)}
+      onPointerLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
+    >
       {images.map((src, i) => (
         <Image
           key={src}
@@ -51,6 +59,7 @@ export function Slideshow({
           data-active={i === index}
           src={src}
           alt={`${alt} ${i + 1}`}
+          aria-hidden={i !== index}
           width={width}
           height={height}
           draggable={false}
@@ -68,7 +77,7 @@ export function Slideshow({
                 n: i + 1,
                 total: images.length,
               })}
-              aria-current={i === index}
+              aria-current={i === index ? "true" : undefined}
               onClick={() => setIndex(i)}
             />
           ))}

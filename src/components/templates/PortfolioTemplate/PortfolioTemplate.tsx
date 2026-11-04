@@ -20,7 +20,7 @@ export function PortfolioTemplate() {
       <SideNav />
       <TopButton />
       <SmoothScroller>
-        <main>
+        <main id="main" tabIndex={-1}>
           <Hero />
           <About />
           <HorizontalScroller />

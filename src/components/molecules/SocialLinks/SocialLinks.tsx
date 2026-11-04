@@ -9,7 +9,7 @@ export function SocialLinks() {
     <ul className={styles.list}>
       {links.map(({ label, href, icon }) => (
         <li key={label}>
-          <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={styles.link}>
+          <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`${label} (${content.site.newTabLabel})`} className={styles.link}>
             <Icon name={icon} size={28} />
           </a>
         </li>

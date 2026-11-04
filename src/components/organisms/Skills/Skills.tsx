@@ -5,7 +5,7 @@ import styles from "./Skills.module.scss";
 
 export function Skills() {
   return (
-    <section id="skills" className={styles.section}>
+    <section id="skills" className={styles.section} aria-label={content.skills.title}>
       <SectionHeading eyebrow={content.skills.eyebrow} title={content.skills.title} />
       <ul className={styles.grid}>
         {content.skills.items.map((skill) => (

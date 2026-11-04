@@ -6,6 +6,7 @@ import styles from "./Reveal.module.scss";
 type RevealProps = {
   as?: "div" | "p" | "span" | "h2" | "h3" | "li";
   className?: string;
+  id?: string;
   /** Seconds to hold back after entering view, to stagger siblings. */
   delay?: number;
   children: ReactNode;
@@ -18,7 +19,7 @@ type RevealProps = {
  * reduced motion shows the text immediately. Not used in the hero, which has
  * its own entrance.
  */
-export function Reveal({ as: Tag = "div", className, delay = 0, children }: RevealProps) {
+export function Reveal({ as: Tag = "div", className, id, delay = 0, children }: RevealProps) {
   const ref = useRef<HTMLElement>(null);
   const [shown, setShown] = useState(false);
 
@@ -40,6 +41,7 @@ export function Reveal({ as: Tag = "div", className, delay = 0, children }: Reve
   return (
     <Tag
       ref={ref as never}
+      id={id}
       className={`${styles.reveal} ${className ?? ""}`}
       data-shown={shown || undefined}
       style={delay ? ({ "--reveal-delay": `${delay}s` } as CSSProperties) : undefined}
