@@ -6,6 +6,8 @@
   position: relative;
   isolation: isolate;
   padding: 160px $gutter 200px;
+  // Horizontal clip only: the scaled wave band is wider than the screen on mobile.
+  overflow-x: clip;
 }
 
 // Mobile only: enlarge the decorative wave band (the WaveShape wrapper, the section's first child).
